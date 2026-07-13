@@ -1,8 +1,23 @@
-# The Struggler — Guts-inspired STS2 Character Mod
+# The Struggler — Guts STS2 Character Mod
 
-[![CI](https://github.com/D3adByte/STS2-TheStruggler/actions/workflows/ci.yml/badge.svg)](https://github.com/D3adByte/STS2-TheStruggler/actions/workflows/ci.yml)
+<p align="center">
+  <img src="Struggler/mod_image.png" alt="The Struggler mod banner" width="320" />
+</p>
 
-Playable **Guts-inspired** bruiser character mod for [Slay the Spire 2](https://store.steampowered.com/app/2868840/Slay_the_Spire_2/).
+<p align="center">
+  <a href="https://github.com/D3adByte/STS2-TheStruggler/actions/workflows/ci.yml"><img src="https://github.com/D3adByte/STS2-TheStruggler/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/mod-0.1.0-crimson" alt="Mod version 0.1.0">
+  <img src="https://img.shields.io/badge/STS2-0.107.0+-0066cc?logo=steam&logoColor=white" alt="STS2 0.107.0+">
+  <img src="https://img.shields.io/badge/.NET-9.0-512bd4?logo=dotnet&logoColor=white" alt=".NET 9">
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs welcome"></a>
+  <img src="https://img.shields.io/badge/Steam%20Workshop-soon-1b2838?logo=steam&logoColor=white" alt="Steam Workshop coming soon">
+  <img src="https://img.shields.io/badge/art-AI%20generated%20(WIP)-orange" alt="AI-generated art WIP">
+</p>
+
+<p align="center"><strong>Griffith did nothing wrong.*</strong> <em>(*in this repo's issue tracker, please.)</em></p>
+
+Playable **Guts** bruiser character mod for [Slay the Spire 2](https://store.steampowered.com/app/2868840/Slay_the_Spire_2/) — Dragon Slayer swings, cannon ammo, Struggle stacks, and Berserker Armor.
 
 > **Work in progress** — we plan to publish on the **Steam Workshop**. Community help is very welcome!
 
@@ -79,8 +94,9 @@ Struggler/
 ## Roadmap
 
 - [ ] Steam Workshop release
-- [ ] Community art pass (replace AI placeholders)
-- [ ] Balance feedback from playtesting
+- [ ] Community art pass (replace AI placeholders — in progress)
+- [ ] Fix in-game text tokens showing raw keys (e.g. `{{Damage}}`) — playtest notes incoming
+- [ ] Balance feedback from full runs
 - [ ] Additional localizations
 
 ## License
