@@ -1,0 +1,8 @@
+{
+  "STRUGGLER-FAIRY_DUST.description": "Remove [gold]Berserk[/gold]. Heal {Heal:diff()} HP.",
+  "STRUGGLER-FAIRY_DUST.title": "Fairy Dust",
+  "STRUGGLER-GUNPOWDER_FLASK.description": "Gain {Ammo:diff()} [gold]Ammo[/gold].",
+  "STRUGGLER-GUNPOWDER_FLASK.title": "Gunpowder Flask",
+  "STRUGGLER-RAGE_DRAFT.description": "Gain {Strength:diff()} [gold]Strength[/gold]. Lose {Damage:diff()} HP.",
+  "STRUGGLER-RAGE_DRAFT.title": "Rage Draft"
+}

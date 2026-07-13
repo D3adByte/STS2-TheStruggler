@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/D3adByte/STS2-TheStruggler/blob/main/CONTRIBUTING.md
+    about: Setup, PR guidelines, and art notes before opening a PR
+  - name: Discussions
+    url: https://github.com/D3adByte/STS2-TheStruggler/discussions
+    about: Ask questions or brainstorm ideas

@@ -1,0 +1,23 @@
+{
+  "STRUGGLER-BERSERK_POWER.description": "Attacks deal 50% more damage. Gain 2 [gold]Strength[/gold] each turn. Take {SelfDamage:diff()} damage at end of turn.",
+  "STRUGGLER-BERSERK_POWER.smartDescription": "Attacks deal 50% more damage. Gain 2 [gold]Strength[/gold] each turn. Take {SelfDamage:diff()} damage at end of turn.",
+  "STRUGGLER-BERSERK_POWER.title": "Berserk",
+  "STRUGGLER-DRAGONSLAYER_POWER.description": "Attacks deal {Damage:diff()} additional damage.",
+  "STRUGGLER-DRAGONSLAYER_POWER.smartDescription": "Attacks deal {Damage:diff()} additional damage.",
+  "STRUGGLER-DRAGONSLAYER_POWER.title": "Dragonslayer",
+  "STRUGGLER-ELITE_HUNTER_POWER.description": "Attacks deal {Damage:diff()} additional damage this combat.",
+  "STRUGGLER-ELITE_HUNTER_POWER.smartDescription": "Attacks deal {Damage:diff()} additional damage this combat.",
+  "STRUGGLER-ELITE_HUNTER_POWER.title": "Elite Hunter",
+  "STRUGGLER-GODOTS_STEEL_POWER.description": "Attacks deal {Damage:diff()} additional damage.",
+  "STRUGGLER-GODOTS_STEEL_POWER.smartDescription": "Attacks deal {Damage:diff()} additional damage.",
+  "STRUGGLER-GODOTS_STEEL_POWER.title": "Godot's Steel",
+  "STRUGGLER-HATRED_POWER.description": "Whenever you kill an enemy, gain {Amount:diff()} [gold]Strength[/gold].",
+  "STRUGGLER-HATRED_POWER.smartDescription": "Whenever you kill an enemy, gain {Amount:diff()} [gold]Strength[/gold].",
+  "STRUGGLER-HATRED_POWER.title": "Hatred",
+  "STRUGGLER-STRUGGLERS_WILL_POWER.description": "When you take unblocked attack damage, gain [gold]Block[/gold] equal to damage taken.",
+  "STRUGGLER-STRUGGLERS_WILL_POWER.smartDescription": "When you take unblocked attack damage, gain [gold]Block[/gold] equal to damage taken.",
+  "STRUGGLER-STRUGGLERS_WILL_POWER.title": "Struggler's Will",
+  "STRUGGLER-STRUGGLE_POWER.description": "Every 3 [gold]Struggle[/gold], gain 1 [gold]Strength[/gold].",
+  "STRUGGLER-STRUGGLE_POWER.smartDescription": "Every 3 [gold]Struggle[/gold], gain 1 [gold]Strength[/gold].",
+  "STRUGGLER-STRUGGLE_POWER.title": "Struggle"
+}

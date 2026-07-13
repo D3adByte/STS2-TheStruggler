@@ -1,0 +1,28 @@
+# Godot / build output
+.godot/
+bin/
+obj/
+publish/
+/android/
+
+# IDE
+.idea/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Local machine paths (copy from Directory.Build.props.example)
+Directory.Build.props
+local.props
+
+# NuGet / packages
+packages/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CI-only game deps (never commit sts2.dll / 0Harmony.dll)
+ci/game-deps/

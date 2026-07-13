@@ -1,0 +1,15 @@
+<Project>
+    <!--
+      Copy this file to Directory.Build.props and set paths for your machine.
+      Directory.Build.props is gitignored so local Steam installs stay private.
+    -->
+    <PropertyGroup>
+        <!-- MegaDot / Godot console binary (needed for publish + .pck export) -->
+        <GodotPath>/path/to/MegaDot_v4.5.1-stable_mono_win64.exe</GodotPath>
+
+        <!-- Slay the Spire 2 install root -->
+        <Sts2Path>/path/to/Steam/steamapps/common/Slay the Spire 2</Sts2Path>
+        <Sts2DataDir>$(Sts2Path)/data_sts2_windows_x86_64</Sts2DataDir>
+        <ModsPath>$(Sts2Path)/mods/</ModsPath>
+    </PropertyGroup>
+</Project>
