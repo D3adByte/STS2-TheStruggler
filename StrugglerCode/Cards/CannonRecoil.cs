@@ -1,6 +1,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using System.Linq;
@@ -12,6 +13,7 @@ public sealed class CannonRecoil() : GutsCard(1, CardType.Attack, CardRarity.Unc
 {
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar("Primary", 10m, ValueProp.Move), new DamageVar("Secondary", 6m, ValueProp.Move), new DamageVar("Recoil", 2m, ValueProp.Unblockable | ValueProp.Unpowered) ];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.AmmoOnly;
     protected override bool IsPlayable => base.IsPlayable && HasAmmo();
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {

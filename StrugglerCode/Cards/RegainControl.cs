@@ -14,7 +14,7 @@ public sealed class RegainControl() : GutsCard(1, CardType.Skill, CardRarity.Unc
 
     public override bool GainsBlock => true;
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new BlockVar(5m, ValueProp.Move) ];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [ HoverTipFactory.FromPower<BerserkPower>() ];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.BerserkOnly;
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         var berserk = Owner.Creature.GetPower<BerserkPower>();

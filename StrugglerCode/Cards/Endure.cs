@@ -14,7 +14,7 @@ public sealed class Endure() : GutsCard(1, CardType.Skill, CardRarity.Basic, Tar
 
     public override bool GainsBlock => true;
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new BlockVar(6m, ValueProp.Move), new PowerVar<StrugglePower>(2m) ];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [ HoverTipFactory.FromPower<StrugglePower>() ];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.StruggleOnly;
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);

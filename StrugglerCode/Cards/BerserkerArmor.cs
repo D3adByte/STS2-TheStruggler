@@ -13,7 +13,7 @@ public sealed class BerserkerArmor() : GutsCard(3, CardType.Power, CardRarity.Ra
 {
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<BerserkPower>(1m) ];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [ HoverTipFactory.FromPower<BerserkPower>() ];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.BerserkOnly;
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play) => await PowerCmd.Apply<BerserkPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, 1m, Owner.Creature, this);
     protected override void OnUpgrade() => DynamicVars["BerserkPower"].BaseValue = 1m; // placeholder innate on upgrade
 

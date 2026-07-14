@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -32,6 +33,8 @@ public sealed class GodotsSteel : StrugglerRelic
 public sealed class PucksDust : StrugglerRelic
 {
     public override RelicRarity Rarity => RelicRarity.Uncommon;
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.BerserkOnly;
 
     public static bool ConsumeBerserkProtection(Player player)
     {
@@ -72,6 +75,8 @@ public sealed class WornCloak : StrugglerRelic
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<StrugglePower>(1m)];
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.StruggleOnly;
+
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
         if (player != Owner) return;
@@ -84,6 +89,8 @@ public sealed class WornCloak : StrugglerRelic
 public sealed class SkullKnightsBlessing : StrugglerRelic
 {
     public override RelicRarity Rarity => RelicRarity.Rare;
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.EliteHunterOnly;
 
     public override async Task AfterRoomEntered(AbstractRoom room)
     {

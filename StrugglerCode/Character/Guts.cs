@@ -48,5 +48,9 @@ public class Guts : PlaceholderCharacterModel
     public override string CustomIconTexturePath => "character_icon_guts.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_guts.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_guts_locked.png".CharacterUiPath();
+    public override string CustomCharacterSelectBg => "res://Struggler/scenes/character_select/guts_background.tscn";
     public override string CustomMapMarkerPath => "map_marker_guts.png".CharacterUiPath();
+    public override string CustomVisualPath => "res://Struggler/scenes/creature_visuals/guts.tscn";
+    public override string CustomRestSiteAnimPath => "res://Struggler/scenes/creature_visuals/guts.tscn";
+    public override float DeathAnimTime => 1.15f;
 }

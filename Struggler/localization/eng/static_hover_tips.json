@@ -1,6 +1,10 @@
 {
-  "STRUGGLER-AMMO.description": "Resource for cannon and crossbow cards. Resets to 3 each combat.",
   "STRUGGLER-AMMO.title": "Ammo",
-  "STRUGGLER-STRUGGLE.description": "Every 3 Struggle grants 1 Strength.",
-  "STRUGGLER-STRUGGLE.title": "Struggle"
+  "STRUGGLER-AMMO.description": "Spent by cannon and crossbow cards. You start each combat with 3 [gold]Ammo[/gold] (up to 6).",
+  "STRUGGLER-BERSERK.title": "Berserk",
+  "STRUGGLER-BERSERK.description": "Attacks deal 50% more damage. Gain 2 [gold]Strength[/gold] each turn. Take damage at end of turn.",
+  "STRUGGLER-ELITE_HUNTER.title": "Elite Hunter",
+  "STRUGGLER-ELITE_HUNTER.description": "Attacks deal 2 additional damage this combat.",
+  "STRUGGLER-STRUGGLE.title": "Struggle",
+  "STRUGGLER-STRUGGLE.description": "Every 3 [gold]Struggle[/gold], gain 1 [gold]Strength[/gold]."
 }

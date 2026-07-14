@@ -24,10 +24,7 @@ public sealed class BrandOfSacrifice : StrugglerRelic
         new IntVar("HpThreshold", 25),
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.FromPower<Struggler.StrugglerCode.Powers.StrugglePower>(),
-    ];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.AmmoAndStruggle;
 
     public override Task BeforeCombatStart()
     {

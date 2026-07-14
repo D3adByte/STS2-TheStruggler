@@ -1,0 +1,14 @@
+﻿{
+  "id": "Struggler",
+  "name": "The Struggler",
+  "author": "D3adByte & contributors",
+  "description": "Play as Guts-inspired bruiser The Struggler. Heavy Dragon Slayer swings, cannon ammo, Struggle, and Berserker Armor.",
+  "version": "0.1.0",
+  "min_game_version": "0.107.0",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": [
+    {"id": "BaseLib", "min_version": "3.3.5"}
+  ],
+  "affects_gameplay": true
+}

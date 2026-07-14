@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Texture2D" path="res://Struggler/images/character/guts_combat.png" id="1_guts"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/guts_attack.png" id="2_attack"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+resource_name = "RESET"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [Vector2(0, -290)]}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation")
+tracks/1/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.0]}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [Vector2(0.42, 0.42)]}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [Color(1, 1, 1, 1)]}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:texture")
+tracks/4/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 1, "values": [ExtResource("1_guts")]}
+
+[sub_resource type="Animation" id="Animation_idle"]
+resource_name = "Idle"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4), "transitions": PackedFloat32Array(1, 1, 1, 1, 1), "update": 0, "values": [Vector2(0, -290), Vector2(-2, -296), Vector2(0, -301), Vector2(2, -296), Vector2(0, -290)]}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/keys = {"times": PackedFloat32Array(0, 1.2, 2.4), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [-0.006, 0.008, -0.006]}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 2
+tracks/2/keys = {"times": PackedFloat32Array(0, 1.2, 2.4), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0.42, 0.42), Vector2(0.422, 0.416), Vector2(0.42, 0.42)]}
+
+[sub_resource type="Animation" id="Animation_attack"]
+resource_name = "Attack"
+length = 0.72
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.16, 0.38, 0.55, 0.72), "transitions": PackedFloat32Array(1, 1, 0.7, 1, 1), "update": 0, "values": [Vector2(0, -290), Vector2(-24, -286), Vector2(74, -304), Vector2(30, -294), Vector2(0, -290)]}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.16, 0.38, 0.72), "transitions": PackedFloat32Array(1, 1, 0.7, 1), "update": 0, "values": [0.0, -0.09, 0.075, 0.0]}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 2
+tracks/2/keys = {"times": PackedFloat32Array(0, 0.38, 0.72), "transitions": PackedFloat32Array(1, 0.8, 1), "update": 0, "values": [Vector2(0.42, 0.42), Vector2(0.45, 0.405), Vector2(0.42, 0.42)]}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:texture")
+tracks/3/keys = {"times": PackedFloat32Array(0, 0.16, 0.56), "transitions": PackedFloat32Array(1, 1, 1), "update": 1, "values": [ExtResource("1_guts"), ExtResource("2_attack"), ExtResource("1_guts")]}
+
+[sub_resource type="Animation" id="Animation_hit"]
+resource_name = "Hit"
+length = 0.42
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.08, 0.16, 0.26, 0.42), "transitions": PackedFloat32Array(1, 1, 1, 1, 1), "update": 0, "values": [Vector2(0, -290), Vector2(-25, -287), Vector2(10, -292), Vector2(-8, -290), Vector2(0, -290)]}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.08, 0.2, 0.42), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [Color(1, 1, 1, 1), Color(1, 0.32, 0.25, 1), Color(0.72, 0.72, 0.72, 1), Color(1, 1, 1, 1)]}
+
+[sub_resource type="Animation" id="Animation_cast"]
+resource_name = "Cast"
+length = 0.68
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.2, 0.42, 0.68), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [Vector2(0, -290), Vector2(10, -300), Vector2(28, -294), Vector2(0, -290)]}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.2, 0.42, 0.68), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [0.0, -0.035, 0.025, 0.0]}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 2
+tracks/2/keys = {"times": PackedFloat32Array(0, 0.3, 0.68), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0.42, 0.42), Vector2(0.435, 0.435), Vector2(0.42, 0.42)]}
+
+[sub_resource type="Animation" id="Animation_relaxed"]
+resource_name = "Relaxed"
+length = 3.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/keys = {"times": PackedFloat32Array(0, 1.6, 3.2), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0, -286), Vector2(0, -294), Vector2(0, -286)]}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/keys = {"times": PackedFloat32Array(0, 1.6, 3.2), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [0.025, 0.01, 0.025]}
+
+[sub_resource type="Animation" id="Animation_dead"]
+resource_name = "Dead"
+length = 1.15
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.25, 0.72, 1.15), "transitions": PackedFloat32Array(1, 1, 0.7, 1), "update": 0, "values": [Vector2(0, -290), Vector2(-20, -278), Vector2(-85, -115), Vector2(-105, -72)]}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.25, 0.72, 1.15), "transitions": PackedFloat32Array(1, 1, 0.7, 1), "update": 0, "values": [0.0, -0.12, -1.18, -1.42]}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/keys = {"times": PackedFloat32Array(0, 0.72, 1.15), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Color(1, 1, 1, 1), Color(0.55, 0.55, 0.55, 1), Color(0.32, 0.32, 0.32, 0.82)]}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_guts"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"Attack": SubResource("Animation_attack"),
+&"Cast": SubResource("Animation_cast"),
+&"Dead": SubResource("Animation_dead"),
+&"Hit": SubResource("Animation_hit"),
+&"Idle": SubResource("Animation_idle"),
+&"Relaxed": SubResource("Animation_relaxed")
+}
+
+[node name="Guts" type="Sprite2D"]
+texture = ExtResource("1_guts")
+position = Vector2(0, -290)
+scale = Vector2(0.42, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {&"": SubResource("AnimationLibrary_guts")}
+autoplay = "Idle"

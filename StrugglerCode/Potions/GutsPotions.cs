@@ -1,12 +1,15 @@
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Struggler.StrugglerCode.Ammo;
+using Struggler.StrugglerCode.Powers;
 
 namespace Struggler.StrugglerCode.Potions;
 
@@ -16,7 +19,10 @@ public sealed class GunpowderFlask : StrugglerPotion
     public override PotionUsage Usage => PotionUsage.CombatOnly;
     public override TargetType TargetType => TargetType.Self;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new IntVar("Ammo", 3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+        [new IntVar("Ammo", 3).WithTooltip("STRUGGLER-AMMO")];
+
+    public override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.AmmoOnly;
 
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {
@@ -32,6 +38,8 @@ public sealed class FairyDust : StrugglerPotion
     public override TargetType TargetType => TargetType.Self;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new HealVar(10m)];
+
+    public override IEnumerable<IHoverTip> ExtraHoverTips => StrugglerHoverTips.BerserkOnly;
 
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {
