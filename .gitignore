@@ -26,3 +26,4 @@ Thumbs.db
 
 # CI-only game deps (never commit sts2.dll / 0Harmony.dll)
 ci/game-deps/
+ci/out/
