@@ -8,7 +8,7 @@
   "STRUGGLER-GODOTS_STEEL.description": "At the start of combat, attacks deal {Damage:diff()} additional damage.",
   "STRUGGLER-GODOTS_STEEL.flavor": "Forged from ultimate steel.",
   "STRUGGLER-GODOTS_STEEL.title": "Godot's Steel",
-  "STRUGGLER-HAWKS_FEATHER.description": "After each combat, lose {Damage:diff()} HP.",
+  "STRUGGLER-HAWKS_FEATHER.description": "After each combat, heal {Heal:diff()} HP.",
   "STRUGGLER-HAWKS_FEATHER.flavor": "A bittersweet memento of the Band of the Hawk.",
   "STRUGGLER-HAWKS_FEATHER.title": "Hawk's Feather",
   "STRUGGLER-PUCKS_DUST.description": "The first time [gold]Berserk[/gold] would deal self-damage each combat, prevent it.",

@@ -58,14 +58,12 @@ public sealed class HawksFeather : StrugglerRelic
 {
     public override RelicRarity Rarity => RelicRarity.Event;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [new DamageVar(5m, ValueProp.Unblockable | ValueProp.Unpowered)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new HealVar(5m)];
 
     public override async Task AfterCombatVictory(CombatRoom room)
     {
         Flash();
-        await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), Owner.Creature,
-            DynamicVars.Damage.BaseValue, DynamicVars.Damage.Props, Owner.Creature, null);
+        await CreatureCmd.Heal(Owner.Creature, DynamicVars.Heal.BaseValue);
     }
 }
 
