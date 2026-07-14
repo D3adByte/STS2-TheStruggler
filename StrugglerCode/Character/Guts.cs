@@ -51,6 +51,6 @@ public class Guts : PlaceholderCharacterModel
     public override string CustomCharacterSelectBg => "res://Struggler/scenes/character_select/guts_background.tscn";
     public override string CustomMapMarkerPath => "map_marker_guts.png".CharacterUiPath();
     public override string CustomVisualPath => "res://Struggler/scenes/creature_visuals/guts.tscn";
-    public override string CustomRestSiteAnimPath => "res://Struggler/scenes/creature_visuals/guts.tscn";
+    public override string CustomRestSiteAnimPath => "res://Struggler/scenes/creature_visuals/guts_rest.tscn";
     public override float DeathAnimTime => 1.15f;
 }
