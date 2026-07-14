@@ -12,7 +12,11 @@ namespace Struggler.StrugglerCode.Cards;
 public sealed class Dragonslayer() : GutsCard(2, CardType.Power, CardRarity.Uncommon, TargetType.Self)
 {
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<DragonslayerPower>(1m) ];
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new PowerVar<DragonslayerPower>(1m),
+        new DamageVar(2m, ValueProp.Move),
+    ];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [ HoverTipFactory.FromPower<DragonslayerPower>() ];
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play) => await PowerCmd.Apply<DragonslayerPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, 1m, Owner.Creature, this);
     protected override void OnUpgrade() => AddKeyword(CardKeyword.Innate);

@@ -1,5 +1,5 @@
 {
-  "STRUGGLER-BERSERKER_HELM.description": "The first time your HP falls below {HpThreshold:diff()}%, gain {Strength:diff()} [gold]Strength[/gold].",
+  "STRUGGLER-BERSERKER_HELM.description": "The first time your HP falls below {HpThreshold:diff()}%, gain {StrengthPower:diff()} [gold]Strength[/gold].",
   "STRUGGLER-BERSERKER_HELM.flavor": "The helm remembers its last wearer.",
   "STRUGGLER-BERSERKER_HELM.title": "Berserker Helm",
   "STRUGGLER-BRAND_OF_SACRIFICE.description": "At the start of combat, gain 3 [gold]Ammo[/gold]. Whenever you take unblocked attack damage, gain 1 [gold]Struggle[/gold]. While at or below {HpThreshold:diff()}% HP, draw {Cards:diff()} additional card each turn.",

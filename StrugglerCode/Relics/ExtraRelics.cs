@@ -18,6 +18,9 @@ public sealed class GodotsSteel : StrugglerRelic
 {
     public override RelicRarity Rarity => RelicRarity.Uncommon;
 
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+        [new DamageVar(2m, ValueProp.Move)];
+
     public override async Task BeforeCombatStart()
     {
         Flash();
