@@ -44,6 +44,20 @@ dotnet build Struggler.csproj -c Release
 
 Output is copied to your STS2 `mods/Struggler/` folder automatically.
 
+**Convenience scripts** (read paths from `Directory.Build.props`, refuse to run while STS2 is open):
+
+```bash
+./scripts/install.sh              # local unsigned build (won't load under SAC)
+./scripts/install-signed.sh       # SAC-safe signed DLL from GitHub Release
+./scripts/test-dll-load.sh        # verify Windows will load the DLL
+./scripts/install.sh --linux      # Linux Steam target (no SAC)
+./scripts/uninstall.sh            # remove mods/Struggler
+```
+
+Signing setup: **[SIGNPATH.md](SIGNPATH.md)** (apply at https://signpath.org/).
+
+**Workshop dev loop (recommended, SAC-safe):** **[WORKSHOP.md](WORKSHOP.md)** — `./scripts/prepare-workshop.sh` → `./scripts/publish-workshop.sh`
+
 ### 3. Publish (assets + .pck)
 
 When changing images, shaders, or localization:
@@ -60,6 +74,28 @@ Requires a valid `GodotPath` in `Directory.Build.props`.
 2. Enable **Struggler** and **BaseLib** in Mod Settings
 3. Restart once
 4. Select **The Struggler** on character select
+
+### Windows: Smart App Control / blocked DLL
+
+SAC blocks **unsigned** `Struggler.dll` (`HRESULT 0x800711C7` → in-game `FileLoadException`). There is no per-file bypass while SAC is on.
+
+**Long-term fix (keep SAC on):** [SignPath Foundation](https://signpath.org/) — free trusted signing for this OSS repo. Full setup: **[SIGNPATH.md](SIGNPATH.md)**.
+
+```bash
+# After SignPath approval + first signed GitHub Release:
+./scripts/install-signed.sh
+./scripts/test-dll-load.sh   # must say OK
+```
+
+**Until signed releases exist:**
+
+| Option | SAC-safe? |
+|--------|-----------|
+| Apply at [signpath.org](https://signpath.org/) (free, ~1 week) | Yes, once live |
+| Certum cert (~$80/yr) + `./scripts/install.sh --sign` | Yes |
+| Linux STS2 + `./scripts/install.sh --linux` | Yes (no SAC on Linux) |
+
+Local `./scripts/install.sh` builds are for **compile checks** — unsigned output will not load on SAC Windows.
 
 ## Submitting changes
 

@@ -17,7 +17,7 @@ public sealed class CrossbowVolley() : GutsCard(1, CardType.Attack, CardRarity.B
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         if (CombatState == null) return;
-        SpendAmmo();
+        await SpendAmmo();
         for (var i = 0; i < DynamicVars.Repeat.IntValue; i++)
         {
             var target = CombatState.HittableEnemies.FirstOrDefault();

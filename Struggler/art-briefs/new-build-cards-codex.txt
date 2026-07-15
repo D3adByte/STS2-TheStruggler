@@ -1,0 +1,185 @@
+# The Struggler — New Build Cards (Codex Art Brief)
+# =================================================
+# Portrait output paths (match existing pool):
+#   Struggler/images/card_portraits/<filename>.png       (standard)
+#   Struggler/images/card_portraits/big/<filename>.png   (large / hover)
+#
+# Style: dark fantasy, Berserk-inspired bruiser, crimson/black palette, gritty ink.
+# Character: armored swordsman, prosthetic arm, Dragonslayer, cannon motifs where noted.
+# Frame: use same STS2 card border style as existing Struggler cards.
+#
+# IMPLEMENTATION STATUS (dev — updated after code pass)
+# =====================================================
+# C# classes: StrugglerCode/Cards/{Ammo,Retaliation,Berserk,Attack}BuildCards.cs
+# Powers: StrugglerCode/Powers/BuildPowers.cs
+# Turn tracking: StrugglerCode/Utils/StrugglerTurnState.cs
+# Localization: Struggler/localization/eng/cards.json + powers.json
+#
+# Art: still uses placeholder card.png / power.png until Codex drops PNGs below.
+# After art lands, copy to card_portraits/ + big/ (no code changes needed).
+
+
+# =============================================================================
+# BUILD A — CANNON / AMMO ("Rickert's War Machine")
+# Fantasy: one-shot burst damage, ammo economy, multi-hit volleys.
+# Existing support: Cannon Shot, Cannon Recoil, Crossbow Volley, Gunpowder Load,
+#   Brand of Sacrifice (3 ammo), Rickert's Gift relic.
+# =============================================================================
+
+--- scattershot ---
+Title: Scattershot
+Type: Attack | Rarity: Common | Cost: 1
+Build: Ammo
+Effect (for art mood): wide blast from prosthetic cannon, sparks and smoke
+Art brief: Guts fires a spreading blast from his arm cannon; orange muzzle flash, three impact trails on silhouetted enemies. Low angle, action freeze.
+Filename: scattershot.png
+
+--- powder_keg ---
+Title: Powder Keg
+Type: Skill | Rarity: Uncommon | Cost: 1
+Build: Ammo
+Effect: next Ammo spent this turn refunds / generates more ammo
+Art brief: Guts slamming a small wooden powder keg onto the ground; bandolier of cannonballs, fuse spark, grim focus. Warm amber light on metal armor.
+Filename: powder_keg.png
+
+--- belt_feed ---
+Title: Belt Feed
+Type: Power | Rarity: Rare | Cost: 2
+Build: Ammo
+Effect: passive ammo regeneration engine
+Art brief: Close-up of ammunition belt feeding into prosthetic arm cannon mechanism; brass cartridges, worn leather, blood-stained gauntlet. Industrial + medieval fusion.
+Filename: belt_feed.png
+
+--- iron_salvo ---
+Title: Iron Salvo
+Type: Attack | Rarity: Uncommon | Cost: 2
+Build: Ammo
+Effect: double cannon hit when ammo was spent this turn
+Art brief: Twin muzzle flashes from arm cannon in rapid succession; Guts braced, cape whipping, shell casings ejecting. Dynamic diagonal composition.
+Filename: iron_salvo.png
+
+
+# =============================================================================
+# BUILD B — STRUGGLE / RETALIATION ("Brand's Wrath")
+# Fantasy: get hit → get stronger → hurt them back. NOT block — damage return.
+# Existing support: Struggle stacks, Brand on hit, Endure, Spin Attack, Worn Cloak.
+# Gap filled: Struggler's Will only gives Block; no thorns/retaliation yet.
+# Inspired by IntoTheSpireverse Shadow Ironclad: Bloodbond, Jolt, Retaliation.
+# =============================================================================
+
+--- brands_revenge ---
+Title: Brand's Revenge
+Type: Power | Rarity: Uncommon | Cost: 2
+Build: Struggle / Retaliation
+Effect: when you take unblocked attack damage, deal damage back to attacker
+Art brief: Brand mark on Guts's neck glowing crimson; ghostly shockwave rippling back toward a shadowy attacker. Pain and rage — face half in shadow.
+Filename: brands_revenge.png
+
+--- pain_mirror ---
+Title: Pain Mirror
+Type: Skill | Rarity: Rare | Cost: 1
+Build: Struggle / Retaliation
+Effect: block now; HP lost this turn also damages enemies
+Art brief: Guts holding Dragonslayer vertically like a mirror; reflected enemy warped in blood-red glass effect. Cracked armor, defiant stance.
+Filename: pain_mirror.png
+
+--- iron_thorns ---
+Title: Iron Thorns
+Type: Power | Rarity: Common | Cost: 1
+Build: Struggle / Retaliation
+Effect: end of turn AoE based on Struggle stacks
+Art brief: Guts surrounded by rusted iron spikes erupting from ground; Struggle energy as crimson threads on armor. AoE explosion vibe, not plant thorns.
+Filename: iron_thorns.png
+
+--- contempt ---
+Title: Contempt
+Type: Attack | Rarity: Uncommon | Cost: 1
+Build: Struggle / Retaliation
+Effect: attack scales with Struggle stacks
+Art brief: Low sweeping slash with Dragonslayer; contemptuous expression, enemy knocked off feet. Red motion lines scale with sword arc length.
+Filename: contempt.png
+
+
+# =============================================================================
+# BUILD C — BERSERKER ("Berserker Armor")
+# Fantasy: enter rage mode, huge attack damage, self-damage tax.
+# Existing support: Berserker Armor, Regain Control, Blood Spray, Puck's Dust.
+# =============================================================================
+
+--- berserkers_roar ---
+Title: Berserker's Roar
+Type: Skill | Rarity: Uncommon | Cost: 0
+Build: Berserk
+Effect: HP cost → draw / energy if Berserk active
+Art brief: Guts screaming mid-battle; Berserker helm nearby, veins visible, mouth open, sound-wave stylization. Raw fury, not comedic.
+Filename: berserkers_roar.png
+
+--- bloodlust ---
+Title: Bloodlust
+Type: Power | Rarity: Rare | Cost: 2
+Build: Berserk
+Effect: first Berserk each combat → big draw / setup
+Art brief: Guts drenched in blood mist, eyes glowing white; Dragonslayer raised overhead. Dark red background, silhouette of fallen enemies.
+Filename: bloodlust.png
+
+--- feral_swipe ---
+Title: Feral Swipe
+Type: Attack | Rarity: Common | Cost: 1
+Build: Berserk
+Effect: cheap attack; bonus damage while Berserk
+Art brief: Beast-like horizontal claw-slash motion with prosthetic arm; wild posture, cape torn, feral blur on arm trail. More animal than sword technique.
+Filename: feral_swipe.png
+
+
+# =============================================================================
+# BUILD D — PURE ATTACK / DRAGONSLAYER ("Sword Saint")
+# Fantasy: stack attack damage, play many attacks, big single hits.
+# Existing support: Dragonslayer power, Relentless Swing, Hatred, Godot's Steel,
+#   Cleave, Hundred-Man Slayer, starter 4 Strikes + Cleave.
+# =============================================================================
+
+--- whirlwind_cut ---
+Title: Whirlwind Cut
+Type: Attack | Rarity: Common | Cost: 1
+Build: Pure Attack
+Effect: 3rd+ attack played in a turn triggers repeat hit
+Art brief: 360° sword spin blur; Guts at center, multiple afterimages of Dragonslayer arc. Wind/cut lines, minimal gore.
+Filename: whirlwind_cut.png
+
+--- dragonslayers_charge ---
+Title: Dragonslayer's Charge
+Type: Attack | Rarity: Uncommon | Cost: 2
+Build: Pure Attack
+Effect: costs 0 after playing 2+ attacks; big single-target hit
+Art brief: Guts charging forward with Dragonslayer dragged sparks behind him; ground cracking, heroic low-angle. Momentum and weight of giant sword.
+Filename: dragonslayers_charge.png
+
+--- execution ---
+Title: Execution
+Type: Attack | Rarity: Rare | Cost: 3
+Build: Pure Attack
+Effect: massive damage; bonus vs low-HP enemies (finisher)
+Art brief: Overhead execution strike — sword buried in ground after cleaving through enemy silhouette. Brutal, final, no mercy. Dark vignette.
+Filename: execution.png
+
+
+# =============================================================================
+# OPTIONAL RELIC ART (Phase 2 — if doing relic pass later)
+# =============================================================================
+# vengeful_brand.png   — Retaliation build enabler relic (thorn damage on Struggle gain)
+# powder_horn.png      — Ammo build relic (+1 max ammo, gain 1 on elite kill)
+# dragonslayers_oath.png — Attack build relic (first attack each turn +damage)
+
+
+# =============================================================================
+# IMPLEMENTATION NOTES (for dev — not for Codex image gen)
+# =============================================================================
+# After art lands:
+#   1. Add C# card classes under StrugglerCode/Cards/
+#   2. Add localization keys to Struggler/localization/eng/cards.json
+#   3. Add powers to StrugglerCode/Powers/ if needed (BrandsRevengePower, etc.)
+#   4. Wire ExtraHoverTips for Ammo / Struggle / Berserk where relevant
+#   5. dotnet publish + Workshop upload
+#
+# Starter deck stays neutral (Strike/Defend/Cleave/Cannon Shot).
+# Builds emerge from rewards — no in-game "pick a build" UI in STS2.

@@ -73,7 +73,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for WSL/Windows paths, publish steps, and
 
 ## Content
 
-- **32 cards** (strikes, cannon kit, berserk powers, exhaust finishers)
+- **43 cards** across 4 build archetypes (Ammo, Retaliation, Berserk, Pure Attack)
 - **6 relics** (Brand, Rickert's Gift, Godot's Steel, etc.)
 - **3 potions**
 

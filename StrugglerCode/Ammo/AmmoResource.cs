@@ -1,5 +1,6 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Players;
+using Struggler.StrugglerCode.Utils;
 
 namespace Struggler.StrugglerCode.Ammo;
 
@@ -41,7 +42,7 @@ public static class AmmoResource
         }
     }
 
-    public static void SpendAmmo(int amount, Player player)
+    public static async Task SpendAmmo(int amount, Player player)
     {
         if (player.PlayerCombatState == null) return;
         var oldVal = PlayerAmmo[player.PlayerCombatState];
@@ -49,5 +50,6 @@ public static class AmmoResource
         if (newVal == oldVal) return;
         PlayerAmmo[player.PlayerCombatState] = newVal;
         AmmoChanged?.Invoke(player.PlayerCombatState, oldVal, newVal);
+        await StrugglerTurnState.OnAmmoSpent(player, amount);
     }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene load_steps=25 format=3]
 
 [ext_resource type="Texture2D" path="res://Struggler/images/character/rig/head.png" id="1_head"]
 [ext_resource type="Texture2D" path="res://Struggler/images/character/rig/torso.png" id="2_torso"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" path="res://Struggler/images/character/rig/cape_root.png" id="12_cape_root"]
 [ext_resource type="Texture2D" path="res://Struggler/images/character/rig/cape_mid.png" id="13_cape_mid"]
 [ext_resource type="Texture2D" path="res://Struggler/images/character/rig/cape_tip.png" id="14_cape_tip"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/guts_combat.png" id="15_guts"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 resource_name = "RESET"
@@ -226,12 +227,36 @@ _data = {
 
 [node name="GutsCreatureVisuals" type="Node2D"]
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="Visuals" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("15_guts")
+position = Vector2(0, -290)
+scale = Vector2(0.42, 0.42)
 
-[node name="PhobiaModeVisuals" type="Node2D" parent="."]
+[node name="PhobiaModeVisuals" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 visible = false
+texture = ExtResource("15_guts")
+position = Vector2(0, -290)
+scale = Vector2(0.42, 0.42)
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -121.0
+offset_top = -278.0
+offset_right = 121.0
+mouse_filter = 2
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(4, -168)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(30, -310)
 
 [node name="RigRoot" type="Node2D" parent="Visuals"]
 position = Vector2(0, -235)

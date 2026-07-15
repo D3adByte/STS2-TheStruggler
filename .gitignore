@@ -27,3 +27,17 @@ Thumbs.db
 # CI-only game deps (never commit sts2.dll / 0Harmony.dll)
 ci/game-deps/
 ci/out/
+
+# Workshop staging (built artifacts — never commit)
+workshop/content/*
+!workshop/content/.gitkeep
+workshop/mod_id.txt
+workshop/mod-uploader.log
+
+# STS2 Mod Uploader binaries (download locally)
+ModUploader
+ModUploader.pdb
+ModUploader-*.zip
+ModUploader.exe
+libsteam_api.so
+steam_appid.txt

@@ -16,7 +16,7 @@ public sealed class CannonShot() : GutsCard(1, CardType.Attack, CardRarity.Basic
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         ArgumentNullException.ThrowIfNull(play.Target);
-        SpendAmmo();
+        await SpendAmmo();
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCardCompatibility(this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(ctx);
     }
     protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(4m);

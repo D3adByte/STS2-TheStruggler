@@ -19,5 +19,20 @@
   "STRUGGLER-STRUGGLERS_WILL_POWER.title": "Struggler's Will",
   "STRUGGLER-STRUGGLE_POWER.description": "Every 3 [gold]Struggle[/gold], gain 1 [gold]Strength[/gold].",
   "STRUGGLER-STRUGGLE_POWER.smartDescription": "Every 3 [gold]Struggle[/gold], gain 1 [gold]Strength[/gold].",
-  "STRUGGLER-STRUGGLE_POWER.title": "Struggle"
+  "STRUGGLER-STRUGGLE_POWER.title": "Struggle",
+  "STRUGGLER-BELT_FEED_POWER.description": "If you have 0 [gold]Ammo[/gold] at the start of your turn, gain 1 [gold]Ammo[/gold].",
+  "STRUGGLER-BELT_FEED_POWER.smartDescription": "If you have 0 [gold]Ammo[/gold] at the start of your turn, gain 1 [gold]Ammo[/gold].",
+  "STRUGGLER-BELT_FEED_POWER.title": "Belt Feed",
+  "STRUGGLER-BLOODLUST_POWER.description": "The first time you enter [gold]Berserk[/gold] each combat, draw {Cards:diff()} cards.",
+  "STRUGGLER-BLOODLUST_POWER.smartDescription": "The first time you enter [gold]Berserk[/gold] each combat, draw {Cards:diff()} cards.",
+  "STRUGGLER-BLOODLUST_POWER.title": "Bloodlust",
+  "STRUGGLER-BRANDS_REVENGE_POWER.description": "Whenever you take unblocked attack damage, deal {Damage:diff()} damage to the attacker.",
+  "STRUGGLER-BRANDS_REVENGE_POWER.smartDescription": "Whenever you take unblocked attack damage, deal {Damage:diff()} damage to the attacker.",
+  "STRUGGLER-BRANDS_REVENGE_POWER.title": "Brand's Revenge",
+  "STRUGGLER-IRON_THORNS_POWER.description": "At the end of your turn, deal damage equal to your [gold]Struggle[/gold] stacks to ALL enemies.",
+  "STRUGGLER-IRON_THORNS_POWER.smartDescription": "At the end of your turn, deal damage equal to your [gold]Struggle[/gold] stacks to ALL enemies.",
+  "STRUGGLER-IRON_THORNS_POWER.title": "Iron Thorns",
+  "STRUGGLER-PAIN_MIRROR_POWER.description": "At the end of your turn, enemies take damage equal to half the HP you lost this turn.",
+  "STRUGGLER-PAIN_MIRROR_POWER.smartDescription": "At the end of your turn, enemies take damage equal to half the HP you lost this turn.",
+  "STRUGGLER-PAIN_MIRROR_POWER.title": "Pain Mirror"
 }

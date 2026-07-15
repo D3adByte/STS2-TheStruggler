@@ -1,0 +1,31 @@
+# SignPath signing policy for STS2 The Struggler mod
+# Reference: https://about.signpath.io/documentation/projects/policies
+#
+# Checked into source control so signing rules are auditable alongside the code.
+# SignPath enforces this policy server-side when a workflow submits a signing request.
+
+policy:
+  name: STS2 The Struggler Mod Release Signing
+  slug: release-signing
+
+  description: |
+    Authenticode signing for Struggler.dll (Slay the Spire 2 character mod).
+    Signing is restricted to the official sign-release.yml workflow on
+    D3adByte/STS2-TheStruggler. Unsigned local builds are not submitted.
+
+  trusted_build_systems:
+    - github
+  github:
+    repository: D3adByte/STS2-TheStruggler
+    workflow_path: .github/workflows/sign-release.yml
+    workflow_name: Sign release
+    branch_or_tag_pattern: 'refs/tags/v*'
+
+  artifact_types:
+    - portable-executable
+
+  signing_certificate:
+    type: code-signing
+
+  approval:
+    mode: automatic

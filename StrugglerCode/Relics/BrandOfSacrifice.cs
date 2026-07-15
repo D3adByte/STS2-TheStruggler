@@ -29,6 +29,7 @@ public sealed class BrandOfSacrifice : StrugglerRelic
     public override Task BeforeCombatStart()
     {
         AmmoResource.ResetCombatAmmo(Owner, AmmoResource.DefaultCombatAmmo);
+        StrugglerTurnState.ResetCombat(Owner);
         return Task.CompletedTask;
     }
 
@@ -50,6 +51,8 @@ public sealed class BrandOfSacrifice : StrugglerRelic
         ICombatState combatState)
     {
         if (player != Owner) return;
+        StrugglerTurnState.ResetTurn(player);
+
         var threshold = DynamicVars["HpThreshold"].IntValue;
         var hpPercent = Owner.Creature.MaxHp > 0
             ? Owner.Creature.CurrentHp * 100 / Owner.Creature.MaxHp

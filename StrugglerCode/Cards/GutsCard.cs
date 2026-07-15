@@ -1,11 +1,14 @@
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
 using Struggler.StrugglerCode.Ammo;
 using Struggler.StrugglerCode.Character;
 using Struggler.StrugglerCode.Extensions;
-using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Players;
+using Struggler.StrugglerCode.Utils;
 
 namespace Struggler.StrugglerCode.Cards;
 
@@ -20,9 +23,16 @@ public abstract class GutsCard(int cost, CardType type, CardRarity rarity, Targe
     protected bool HasAmmo(int amount = 1) =>
         Owner != null && AmmoResource.HasAmmo(Owner, amount);
 
-    protected void SpendAmmo(int amount = 1)
+    protected async Task SpendAmmo(int amount = 1)
     {
         if (Owner != null)
-            AmmoResource.SpendAmmo(amount, Owner);
+            await AmmoResource.SpendAmmo(amount, Owner);
+    }
+
+    public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay play)
+    {
+        if (Type == CardType.Attack && Owner != null)
+            StrugglerTurnState.RecordAttack(Owner);
+        return Task.CompletedTask;
     }
 }

@@ -1,0 +1,12 @@
+{
+  "title": "The Struggler",
+  "description": "Play as Guts-inspired bruiser The Struggler. Requires BaseLib.\n\nFan mod \u2014 not affiliated with MegaCrit or Berserk rights holders. WIP.",
+  "visibility": "private",
+  "changeNote": "Initial Workshop upload",
+  "tags": [
+    "character"
+  ],
+  "dependencies": [
+    "3737335127"
+  ]
+}

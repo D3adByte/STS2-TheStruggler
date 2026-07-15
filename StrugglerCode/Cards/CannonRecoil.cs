@@ -18,7 +18,7 @@ public sealed class CannonRecoil() : GutsCard(1, CardType.Attack, CardRarity.Unc
     protected override async Task OnPlay(PlayerChoiceContext ctx, CardPlay play)
     {
         ArgumentNullException.ThrowIfNull(play.Target);
-        SpendAmmo();
+        await SpendAmmo();
         await DamageCmd.Attack(DynamicVars["Primary"].BaseValue).FromCardCompatibility(this, play).Targeting(play.Target).Execute(ctx);
         var second = CombatState?.HittableEnemies.FirstOrDefault(e => e != play.Target);
         if (second != null)
