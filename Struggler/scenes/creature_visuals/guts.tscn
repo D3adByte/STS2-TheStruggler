@@ -1,121 +1,222 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=24 format=3]
 
-[ext_resource type="Texture2D" path="res://Struggler/images/character/guts_combat.png" id="1_guts"]
-[ext_resource type="Texture2D" path="res://Struggler/images/character/guts_attack.png" id="2_attack"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/head.png" id="1_head"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/torso.png" id="2_torso"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/right_arm.png" id="3_right_arm"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/right_fist.png" id="4_right_fist"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/left_arm.png" id="5_left_arm"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/prosthetic_arm.png" id="6_prosthetic"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/left_thigh.png" id="7_left_thigh"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/left_leg.png" id="8_left_leg"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/right_thigh.png" id="9_right_thigh"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/right_leg.png" id="10_right_leg"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/dragonslayer.png" id="11_sword"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/cape_root.png" id="12_cape_root"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/cape_mid.png" id="13_cape_mid"]
+[ext_resource type="Texture2D" path="res://Struggler/images/character/rig/cape_tip.png" id="14_cape_tip"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 resource_name = "RESET"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Visuals:position")
-tracks/0/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [Vector2(0, -290)]}
+tracks/0/path = NodePath("Visuals/RigRoot:position")
+tracks/0/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [Vector2(0, -235)]}
 tracks/1/type = "value"
-tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/path = NodePath("Visuals/RigRoot:rotation")
 tracks/1/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.0]}
 tracks/2/type = "value"
-tracks/2/path = NodePath("Visuals:scale")
-tracks/2/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [Vector2(0.42, 0.42)]}
+tracks/2/path = NodePath("Visuals/RigRoot:scale")
+tracks/2/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [Vector2(0.45, 0.45)]}
 tracks/3/type = "value"
-tracks/3/path = NodePath("Visuals:modulate")
+tracks/3/path = NodePath("Visuals/RigRoot:modulate")
 tracks/3/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [Color(1, 1, 1, 1)]}
 tracks/4/type = "value"
-tracks/4/path = NodePath("Visuals:texture")
-tracks/4/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 1, "values": [ExtResource("1_guts")]}
+tracks/4/path = NodePath("Visuals/RigRoot/TorsoPivot:rotation")
+tracks/4/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.0]}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot:rotation")
+tracks/5/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.0]}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Visuals/RigRoot/TorsoPivot/SwordPivot:rotation")
+tracks/6/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [-1.02]}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Visuals/RigRoot/TorsoPivot/RightArmPivot:rotation")
+tracks/7/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [-0.22]}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Visuals/RigRoot/TorsoPivot/LeftArmPivot:rotation")
+tracks/8/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.16]}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Visuals/RigRoot/TorsoPivot/CapeRoot:rotation")
+tracks/9/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [-0.08]}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Visuals/RigRoot/TorsoPivot/CapeRoot/CapeMid:rotation")
+tracks/10/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.08]}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Visuals/RigRoot/TorsoPivot/CapeRoot/CapeMid/CapeTip:rotation")
+tracks/11/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.08]}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot/BrandGlow:visible")
+tracks/12/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 1, "values": [false]}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Visuals/RigRoot/BloodFx:visible")
+tracks/13/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 1, "values": [false]}
 
 [sub_resource type="Animation" id="Animation_idle"]
 resource_name = "Idle"
-length = 2.4
+length = 2.6
 loop_mode = 1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("Visuals/RigRoot/TorsoPivot:position")
 tracks/0/interp = 2
-tracks/0/keys = {"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4), "transitions": PackedFloat32Array(1, 1, 1, 1, 1), "update": 0, "values": [Vector2(0, -290), Vector2(-2, -296), Vector2(0, -301), Vector2(2, -296), Vector2(0, -290)]}
+tracks/0/keys = {"times": PackedFloat32Array(0, 1.3, 2.6), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0, 0), Vector2(0, -7), Vector2(0, 0)]}
 tracks/1/type = "value"
-tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/path = NodePath("Visuals/RigRoot/TorsoPivot:scale")
 tracks/1/interp = 2
-tracks/1/keys = {"times": PackedFloat32Array(0, 1.2, 2.4), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [-0.006, 0.008, -0.006]}
+tracks/1/keys = {"times": PackedFloat32Array(0, 1.3, 2.6), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(1, 1), Vector2(1.012, 0.99), Vector2(1, 1)]}
 tracks/2/type = "value"
-tracks/2/path = NodePath("Visuals:scale")
+tracks/2/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot:rotation")
 tracks/2/interp = 2
-tracks/2/keys = {"times": PackedFloat32Array(0, 1.2, 2.4), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0.42, 0.42), Vector2(0.422, 0.416), Vector2(0.42, 0.42)]}
+tracks/2/keys = {"times": PackedFloat32Array(0, 1.3, 2.6), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [-0.025, 0.018, -0.025]}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Visuals/RigRoot/TorsoPivot/RightArmPivot:rotation")
+tracks/3/interp = 2
+tracks/3/keys = {"times": PackedFloat32Array(0, 1.3, 2.6), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [-0.22, -0.19, -0.22]}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Visuals/RigRoot/TorsoPivot/LeftArmPivot:rotation")
+tracks/4/interp = 2
+tracks/4/keys = {"times": PackedFloat32Array(0, 1.3, 2.6), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [0.16, 0.12, 0.16]}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Visuals/RigRoot/TorsoPivot/CapeRoot:rotation")
+tracks/5/interp = 2
+tracks/5/keys = {"times": PackedFloat32Array(0, 0.65, 1.3, 1.95, 2.6), "transitions": PackedFloat32Array(1, 1, 1, 1, 1), "update": 0, "values": [-0.08, -0.02, 0.035, -0.03, -0.08]}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Visuals/RigRoot/TorsoPivot/CapeRoot/CapeMid:rotation")
+tracks/6/interp = 2
+tracks/6/keys = {"times": PackedFloat32Array(0, 0.65, 1.3, 1.95, 2.6), "transitions": PackedFloat32Array(1, 1, 1, 1, 1), "update": 0, "values": [0.08, 0.15, 0.03, -0.02, 0.08]}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Visuals/RigRoot/TorsoPivot/CapeRoot/CapeMid/CapeTip:rotation")
+tracks/7/interp = 2
+tracks/7/keys = {"times": PackedFloat32Array(0, 0.65, 1.3, 1.95, 2.6), "transitions": PackedFloat32Array(1, 1, 1, 1, 1), "update": 0, "values": [0.08, 0.18, 0.12, -0.04, 0.08]}
 
 [sub_resource type="Animation" id="Animation_attack"]
 resource_name = "Attack"
-length = 0.72
+length = 0.82
 tracks/0/type = "value"
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("Visuals/RigRoot:position")
 tracks/0/interp = 2
-tracks/0/keys = {"times": PackedFloat32Array(0, 0.16, 0.38, 0.55, 0.72), "transitions": PackedFloat32Array(1, 1, 0.7, 1, 1), "update": 0, "values": [Vector2(0, -290), Vector2(-24, -286), Vector2(74, -304), Vector2(30, -294), Vector2(0, -290)]}
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.18, 0.42, 0.62, 0.82), "transitions": PackedFloat32Array(1, 1, 0.7, 1, 1), "update": 0, "values": [Vector2(0, -235), Vector2(-24, -232), Vector2(78, -242), Vector2(28, -236), Vector2(0, -235)]}
 tracks/1/type = "value"
-tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/path = NodePath("Visuals/RigRoot/TorsoPivot:rotation")
 tracks/1/interp = 2
-tracks/1/keys = {"times": PackedFloat32Array(0, 0.16, 0.38, 0.72), "transitions": PackedFloat32Array(1, 1, 0.7, 1), "update": 0, "values": [0.0, -0.09, 0.075, 0.0]}
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.18, 0.42, 0.82), "transitions": PackedFloat32Array(1, 1, 0.7, 1), "update": 0, "values": [0.0, -0.16, 0.19, 0.0]}
 tracks/2/type = "value"
-tracks/2/path = NodePath("Visuals:scale")
+tracks/2/path = NodePath("Visuals/RigRoot/TorsoPivot/SwordPivot:rotation")
 tracks/2/interp = 2
-tracks/2/keys = {"times": PackedFloat32Array(0, 0.38, 0.72), "transitions": PackedFloat32Array(1, 0.8, 1), "update": 0, "values": [Vector2(0.42, 0.42), Vector2(0.45, 0.405), Vector2(0.42, 0.42)]}
+tracks/2/keys = {"times": PackedFloat32Array(0, 0.18, 0.42, 0.62, 0.82), "transitions": PackedFloat32Array(1, 1, 0.45, 1, 1), "update": 0, "values": [-1.02, -1.56, 0.5, 0.18, -1.02]}
 tracks/3/type = "value"
-tracks/3/path = NodePath("Visuals:texture")
-tracks/3/keys = {"times": PackedFloat32Array(0, 0.16, 0.56), "transitions": PackedFloat32Array(1, 1, 1), "update": 1, "values": [ExtResource("1_guts"), ExtResource("2_attack"), ExtResource("1_guts")]}
+tracks/3/path = NodePath("Visuals/RigRoot/TorsoPivot/RightArmPivot:rotation")
+tracks/3/interp = 2
+tracks/3/keys = {"times": PackedFloat32Array(0, 0.18, 0.42, 0.82), "transitions": PackedFloat32Array(1, 1, 0.6, 1), "update": 0, "values": [-0.22, -0.7, 0.62, -0.22]}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Visuals/RigRoot/TorsoPivot/LeftArmPivot:rotation")
+tracks/4/interp = 2
+tracks/4/keys = {"times": PackedFloat32Array(0, 0.18, 0.42, 0.82), "transitions": PackedFloat32Array(1, 1, 0.6, 1), "update": 0, "values": [0.16, -0.42, 0.74, 0.16]}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Visuals/RigRoot/TorsoPivot/CapeRoot:rotation")
+tracks/5/interp = 2
+tracks/5/keys = {"times": PackedFloat32Array(0, 0.42, 0.82), "transitions": PackedFloat32Array(1, 0.6, 1), "update": 0, "values": [-0.08, -0.42, -0.08]}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Visuals/RigRoot/TorsoPivot/CapeRoot/CapeMid:rotation")
+tracks/6/interp = 2
+tracks/6/keys = {"times": PackedFloat32Array(0, 0.42, 0.82), "transitions": PackedFloat32Array(1, 0.6, 1), "update": 0, "values": [0.08, -0.28, 0.08]}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Visuals/RigRoot/BloodFx:visible")
+tracks/7/keys = {"times": PackedFloat32Array(0, 0.35, 0.62), "transitions": PackedFloat32Array(1, 1, 1), "update": 1, "values": [false, true, false]}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Visuals/RigRoot/BloodFx:position")
+tracks/8/interp = 2
+tracks/8/keys = {"times": PackedFloat32Array(0.35, 0.62), "transitions": PackedFloat32Array(1, 1), "update": 0, "values": [Vector2(250, -130), Vector2(390, -175)]}
 
 [sub_resource type="Animation" id="Animation_hit"]
 resource_name = "Hit"
-length = 0.42
+length = 0.46
 tracks/0/type = "value"
-tracks/0/path = NodePath("Visuals:position")
-tracks/0/keys = {"times": PackedFloat32Array(0, 0.08, 0.16, 0.26, 0.42), "transitions": PackedFloat32Array(1, 1, 1, 1, 1), "update": 0, "values": [Vector2(0, -290), Vector2(-25, -287), Vector2(10, -292), Vector2(-8, -290), Vector2(0, -290)]}
+tracks/0/path = NodePath("Visuals/RigRoot:position")
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.08, 0.17, 0.3, 0.46), "transitions": PackedFloat32Array(1, 1, 1, 1, 1), "update": 0, "values": [Vector2(0, -235), Vector2(-34, -231), Vector2(12, -237), Vector2(-8, -234), Vector2(0, -235)]}
 tracks/1/type = "value"
-tracks/1/path = NodePath("Visuals:modulate")
-tracks/1/keys = {"times": PackedFloat32Array(0, 0.08, 0.2, 0.42), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [Color(1, 1, 1, 1), Color(1, 0.32, 0.25, 1), Color(0.72, 0.72, 0.72, 1), Color(1, 1, 1, 1)]}
+tracks/1/path = NodePath("Visuals/RigRoot:modulate")
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.08, 0.22, 0.46), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [Color(1, 1, 1, 1), Color(1, 0.22, 0.16, 1), Color(0.62, 0.62, 0.62, 1), Color(1, 1, 1, 1)]}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot:rotation")
+tracks/2/keys = {"times": PackedFloat32Array(0, 0.1, 0.28, 0.46), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [0.0, -0.22, 0.08, 0.0]}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot/BrandGlow:visible")
+tracks/3/keys = {"times": PackedFloat32Array(0, 0.08, 0.4), "transitions": PackedFloat32Array(1, 1, 1), "update": 1, "values": [false, true, false]}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot/BrandGlow:modulate")
+tracks/4/keys = {"times": PackedFloat32Array(0.08, 0.2, 0.4), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Color(1, 0.03, 0.01, 1), Color(0.7, 0.01, 0.008, 0.62), Color(1, 0.03, 0.01, 0)]}
 
 [sub_resource type="Animation" id="Animation_cast"]
 resource_name = "Cast"
-length = 0.68
+length = 0.72
 tracks/0/type = "value"
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("Visuals/RigRoot/TorsoPivot/SwordPivot:rotation")
 tracks/0/interp = 2
-tracks/0/keys = {"times": PackedFloat32Array(0, 0.2, 0.42, 0.68), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [Vector2(0, -290), Vector2(10, -300), Vector2(28, -294), Vector2(0, -290)]}
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.25, 0.48, 0.72), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [-1.02, -0.28, -0.18, -1.02]}
 tracks/1/type = "value"
-tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/path = NodePath("Visuals/RigRoot/TorsoPivot:position")
 tracks/1/interp = 2
-tracks/1/keys = {"times": PackedFloat32Array(0, 0.2, 0.42, 0.68), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [0.0, -0.035, 0.025, 0.0]}
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.25, 0.48, 0.72), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [Vector2(0, 0), Vector2(12, -8), Vector2(22, -3), Vector2(0, 0)]}
 tracks/2/type = "value"
-tracks/2/path = NodePath("Visuals:scale")
+tracks/2/path = NodePath("Visuals/RigRoot/TorsoPivot/LeftArmPivot:rotation")
 tracks/2/interp = 2
-tracks/2/keys = {"times": PackedFloat32Array(0, 0.3, 0.68), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0.42, 0.42), Vector2(0.435, 0.435), Vector2(0.42, 0.42)]}
+tracks/2/keys = {"times": PackedFloat32Array(0, 0.25, 0.48, 0.72), "transitions": PackedFloat32Array(1, 1, 1, 1), "update": 0, "values": [0.16, -0.55, -0.36, 0.16]}
 
 [sub_resource type="Animation" id="Animation_relaxed"]
 resource_name = "Relaxed"
-length = 3.2
+length = 3.4
 loop_mode = 1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("Visuals/RigRoot/TorsoPivot:position")
 tracks/0/interp = 2
-tracks/0/keys = {"times": PackedFloat32Array(0, 1.6, 3.2), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0, -286), Vector2(0, -294), Vector2(0, -286)]}
+tracks/0/keys = {"times": PackedFloat32Array(0, 1.7, 3.4), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Vector2(0, 6), Vector2(0, -3), Vector2(0, 6)]}
 tracks/1/type = "value"
-tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot:rotation")
 tracks/1/interp = 2
-tracks/1/keys = {"times": PackedFloat32Array(0, 1.6, 3.2), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [0.025, 0.01, 0.025]}
+tracks/1/keys = {"times": PackedFloat32Array(0, 1.7, 3.4), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [0.09, 0.04, 0.09]}
 
 [sub_resource type="Animation" id="Animation_dead"]
 resource_name = "Dead"
-length = 1.15
+length = 1.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("Visuals/RigRoot:position")
 tracks/0/interp = 2
-tracks/0/keys = {"times": PackedFloat32Array(0, 0.25, 0.72, 1.15), "transitions": PackedFloat32Array(1, 1, 0.7, 1), "update": 0, "values": [Vector2(0, -290), Vector2(-20, -278), Vector2(-85, -115), Vector2(-105, -72)]}
+tracks/0/keys = {"times": PackedFloat32Array(0, 0.25, 0.78, 1.2), "transitions": PackedFloat32Array(1, 1, 0.65, 1), "update": 0, "values": [Vector2(0, -235), Vector2(-18, -224), Vector2(-92, -88), Vector2(-115, -48)]}
 tracks/1/type = "value"
-tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/path = NodePath("Visuals/RigRoot:rotation")
 tracks/1/interp = 2
-tracks/1/keys = {"times": PackedFloat32Array(0, 0.25, 0.72, 1.15), "transitions": PackedFloat32Array(1, 1, 0.7, 1), "update": 0, "values": [0.0, -0.12, -1.18, -1.42]}
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.25, 0.78, 1.2), "transitions": PackedFloat32Array(1, 1, 0.65, 1), "update": 0, "values": [0.0, -0.1, -1.16, -1.42]}
 tracks/2/type = "value"
-tracks/2/path = NodePath("Visuals:modulate")
-tracks/2/keys = {"times": PackedFloat32Array(0, 0.72, 1.15), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Color(1, 1, 1, 1), Color(0.55, 0.55, 0.55, 1), Color(0.32, 0.32, 0.32, 0.82)]}
+tracks/2/path = NodePath("Visuals/RigRoot:modulate")
+tracks/2/keys = {"times": PackedFloat32Array(0, 0.78, 1.2), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Color(1, 1, 1, 1), Color(0.56, 0.56, 0.56, 1), Color(0.28, 0.28, 0.28, 0.82)]}
+
+[sub_resource type="Animation" id="Animation_brand"]
+resource_name = "BrandActive"
+length = 1.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot/BrandGlow:visible")
+tracks/0/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 1, "values": [true]}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Visuals/RigRoot/TorsoPivot/HeadPivot/BrandGlow:modulate")
+tracks/1/interp = 2
+tracks/1/keys = {"times": PackedFloat32Array(0, 0.5, 1), "transitions": PackedFloat32Array(1, 1, 1), "update": 0, "values": [Color(0.75, 0.04, 0.025, 0.62), Color(1, 0.08, 0.035, 1), Color(0.75, 0.04, 0.025, 0.62)]}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_guts"]
 _data = {
 &"RESET": SubResource("Animation_reset"),
 &"Attack": SubResource("Animation_attack"),
+&"BrandActive": SubResource("Animation_brand"),
 &"Cast": SubResource("Animation_cast"),
 &"Dead": SubResource("Animation_dead"),
 &"Hit": SubResource("Animation_hit"),
@@ -125,18 +226,162 @@ _data = {
 
 [node name="GutsCreatureVisuals" type="Node2D"]
 
-[node name="Visuals" type="Sprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("1_guts")
-position = Vector2(0, -290)
-scale = Vector2(0.42, 0.42)
 
-[node name="PhobiaModeVisuals" type="Sprite2D" parent="."]
+[node name="PhobiaModeVisuals" type="Node2D" parent="."]
 unique_name_in_owner = true
 visible = false
-texture = ExtResource("1_guts")
-position = Vector2(0, -290)
-scale = Vector2(0.42, 0.42)
+
+[node name="RigRoot" type="Node2D" parent="Visuals"]
+position = Vector2(0, -235)
+scale = Vector2(0.45, 0.45)
+
+[node name="LeftLegPivot" type="Node2D" parent="RigRoot"]
+position = Vector2(-58, 148)
+rotation = 0.04
+
+[node name="Thigh" type="Sprite2D" parent="RigRoot/LeftLegPivot"]
+position = Vector2(0, 82)
+texture = ExtResource("7_left_thigh")
+
+[node name="ShinPivot" type="Node2D" parent="RigRoot/LeftLegPivot"]
+position = Vector2(-4, 165)
+rotation = -0.04
+
+[node name="Leg" type="Sprite2D" parent="RigRoot/LeftLegPivot/ShinPivot"]
+position = Vector2(0, 145)
+texture = ExtResource("8_left_leg")
+
+[node name="RightLegPivot" type="Node2D" parent="RigRoot"]
+position = Vector2(58, 148)
+rotation = -0.035
+
+[node name="Thigh" type="Sprite2D" parent="RigRoot/RightLegPivot"]
+position = Vector2(0, 80)
+texture = ExtResource("9_right_thigh")
+
+[node name="ShinPivot" type="Node2D" parent="RigRoot/RightLegPivot"]
+position = Vector2(5, 166)
+rotation = 0.035
+
+[node name="Leg" type="Sprite2D" parent="RigRoot/RightLegPivot/ShinPivot"]
+position = Vector2(0, 148)
+texture = ExtResource("10_right_leg")
+
+[node name="TorsoPivot" type="Node2D" parent="RigRoot"]
+
+[node name="CapeRoot" type="Node2D" parent="RigRoot/TorsoPivot"]
+position = Vector2(-72, -150)
+rotation = -0.08
+z_index = -4
+
+[node name="Sprite" type="Sprite2D" parent="RigRoot/TorsoPivot/CapeRoot"]
+position = Vector2(-58, 116)
+texture = ExtResource("12_cape_root")
+
+[node name="CapeMid" type="Node2D" parent="RigRoot/TorsoPivot/CapeRoot"]
+position = Vector2(-108, 42)
+rotation = 0.08
+
+[node name="Sprite" type="Sprite2D" parent="RigRoot/TorsoPivot/CapeRoot/CapeMid"]
+position = Vector2(-130, 88)
+texture = ExtResource("13_cape_mid")
+
+[node name="CapeTip" type="Node2D" parent="RigRoot/TorsoPivot/CapeRoot/CapeMid"]
+position = Vector2(-212, 28)
+rotation = 0.08
+
+[node name="Sprite" type="Sprite2D" parent="RigRoot/TorsoPivot/CapeRoot/CapeMid/CapeTip"]
+position = Vector2(-148, 76)
+texture = ExtResource("14_cape_tip")
+
+[node name="SwordPivot" type="Node2D" parent="RigRoot/TorsoPivot"]
+position = Vector2(-72, -100)
+rotation = -1.02
+z_index = -2
+
+[node name="Sword" type="Sprite2D" parent="RigRoot/TorsoPivot/SwordPivot"]
+position = Vector2(0, -292)
+scale = Vector2(0.82, 0.82)
+texture = ExtResource("11_sword")
+
+[node name="Torso" type="Sprite2D" parent="RigRoot/TorsoPivot"]
+position = Vector2(0, -8)
+texture = ExtResource("2_torso")
+
+[node name="HeadPivot" type="Node2D" parent="RigRoot/TorsoPivot"]
+position = Vector2(-12, -186)
+
+[node name="Head" type="Sprite2D" parent="RigRoot/TorsoPivot/HeadPivot"]
+position = Vector2(0, -76)
+texture = ExtResource("1_head")
+
+[node name="BrandGlow" type="Node2D" parent="RigRoot/TorsoPivot/HeadPivot"]
+position = Vector2(-42, -14)
+visible = false
+modulate = Color(1, 0.06, 0.03, 0.9)
+z_index = 3
+
+[node name="StrokeA" type="Line2D" parent="RigRoot/TorsoPivot/HeadPivot/BrandGlow"]
+points = PackedVector2Array(-11, -13, 0, 13, 11, -13, 0, -4, -11, -13)
+width = 5.0
+default_color = Color(1, 0.02, 0.01, 1)
+
+[node name="StrokeB" type="Line2D" parent="RigRoot/TorsoPivot/HeadPivot/BrandGlow"]
+points = PackedVector2Array(-9, 2, 9, 2)
+width = 4.0
+default_color = Color(1, 0.12, 0.035, 1)
+
+[node name="RightArmPivot" type="Node2D" parent="RigRoot/TorsoPivot"]
+position = Vector2(-112, -120)
+rotation = -0.22
+z_index = 1
+
+[node name="Arm" type="Sprite2D" parent="RigRoot/TorsoPivot/RightArmPivot"]
+position = Vector2(-10, 120)
+texture = ExtResource("3_right_arm")
+
+[node name="FistPivot" type="Node2D" parent="RigRoot/TorsoPivot/RightArmPivot"]
+position = Vector2(-18, 212)
+
+[node name="Fist" type="Sprite2D" parent="RigRoot/TorsoPivot/RightArmPivot/FistPivot"]
+position = Vector2(0, 45)
+texture = ExtResource("4_right_fist")
+
+[node name="LeftArmPivot" type="Node2D" parent="RigRoot/TorsoPivot"]
+position = Vector2(110, -122)
+rotation = 0.16
+z_index = 1
+
+[node name="UpperArm" type="Sprite2D" parent="RigRoot/TorsoPivot/LeftArmPivot"]
+position = Vector2(0, 120)
+texture = ExtResource("5_left_arm")
+
+[node name="ProstheticPivot" type="Node2D" parent="RigRoot/TorsoPivot/LeftArmPivot"]
+position = Vector2(8, 195)
+rotation = -0.08
+
+[node name="Prosthetic" type="Sprite2D" parent="RigRoot/TorsoPivot/LeftArmPivot/ProstheticPivot"]
+position = Vector2(0, 128)
+texture = ExtResource("6_prosthetic")
+
+[node name="BloodFx" type="Node2D" parent="RigRoot"]
+visible = false
+z_index = 8
+
+[node name="Slash" type="Line2D" parent="RigRoot/BloodFx"]
+points = PackedVector2Array(-70, 18, 0, 0, 82, -20, 150, -38)
+width = 12.0
+default_color = Color(0.46, 0.015, 0.012, 0.9)
+
+[node name="DropA" type="Polygon2D" parent="RigRoot/BloodFx"]
+polygon = PackedVector2Array(12, -8, 26, -28, 34, -5, 24, 8)
+color = Color(0.58, 0.02, 0.015, 0.9)
+
+[node name="DropB" type="Polygon2D" parent="RigRoot/BloodFx"]
+polygon = PackedVector2Array(65, -18, 77, -45, 86, -15, 76, -3)
+color = Color(0.42, 0.008, 0.008, 0.85)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {&"": SubResource("AnimationLibrary_guts")}
